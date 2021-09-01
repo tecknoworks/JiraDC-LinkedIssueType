@@ -25,7 +25,6 @@ app.post('/linkedissues', async (req, res) => {
 app.get('/linkedissues', async (req, res) =>{
     // const record= await Project.find({'type':req.query.type}).exec()
     const record= await LinkedIssues.find({})
-    console.log(record)
     res.json(record)
 })
 
