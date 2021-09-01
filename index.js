@@ -10,7 +10,7 @@ app.use(bodyParser.raw());
 
 const LinkedIssues = require('./models/linkedissues')
 const port = 8089
-var mongoDB = 'mongodb+srv://Damaris:12345@cluster0.gdp4f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+var mongoDB = 'mongodb+srv://cata:cata@cluster0.wcbqw.mongodb.net/first?retryWrites=true&w=majority';
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
@@ -25,7 +25,6 @@ app.post('/linkedissues', async (req, res) => {
 app.get('/linkedissues', async (req, res) =>{
     // const record= await Project.find({'type':req.query.type}).exec()
     const record= await LinkedIssues.find({})
-    console.log(record)
     res.json(record)
 })
 
